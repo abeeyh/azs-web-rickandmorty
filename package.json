@@ -6,6 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major",
+    "release:patch": "standard-version --release-as patch",
     "prepare": "husky install",
     "lint": "eslint --fix .",
     "format": "prettier --write ."
@@ -30,6 +33,46 @@
     "eslint-plugin-react": "^7.33.2",
     "husky": "^9.0.6",
     "prettier": "^3.2.4",
+    "standard-version": "^9.5.0",
     "typescript": "^5"
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true
+    },
+    "types": [
+      {
+        "type": "feat",
+        "section": "Features"
+      },
+      {
+        "type": "fix",
+        "section": "Bug Fixes"
+      },
+      {
+        "type": "chore",
+        "hidden": true
+      },
+      {
+        "type": "docs",
+        "hidden": true
+      },
+      {
+        "type": "style",
+        "hidden": true
+      },
+      {
+        "type": "refactor",
+        "hidden": true
+      },
+      {
+        "type": "perf",
+        "hidden": true
+      },
+      {
+        "type": "test",
+        "hidden": true
+      }
+    ]
   }
 }
