@@ -31,13 +31,13 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
   return (
     <Grid
       container
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
-        width: '100%',
-      }}
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      height="100%"
+      width="100%"
+      padding="1rem"
+      spacing={2}
     >
       <Grid
         item
@@ -55,9 +55,9 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
       </Grid>
       <Grid
         item
-        xs={12}
-        sm={12}
-        md={12}
+        xs={6}
+        sm={6}
+        md={6}
         lg={1}
         sx={{
           textAlign: 'center',
@@ -73,9 +73,9 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
       </Grid>
       <Grid
         item
-        xs={12}
-        sm={12}
-        md={12}
+        xs={6}
+        sm={6}
+        md={6}
         lg={1}
         sx={{
           textAlign: 'center',

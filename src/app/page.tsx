@@ -23,11 +23,9 @@ const ClientSideComponent = () => {
         container
         justifyContent="center"
         style={{ minHeight: '100vh' }}
-        marginTop={16}
+        marginTop={8}
       >
-        <Grid item xs={12} sm={10} md={8} lg={6} xl={4}>
-          <EpisodesList />
-        </Grid>
+        <EpisodesList />
       </Grid>
     </ThemeProvider>
   );

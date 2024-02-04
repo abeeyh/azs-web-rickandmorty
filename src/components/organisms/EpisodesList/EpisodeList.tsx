@@ -99,9 +99,16 @@ const EpisodesList: React.FC = () => {
     : episodes.filter((episode) =>
         episode.name.toLowerCase().includes(searchTitle.toLowerCase())
       );
+
   // TODO: mover os componentes de input e show whatched para um componente e a estilizacao para o EpisodeList.scss
   return (
-    <Grid container spacing={2} display="flex" flexDirection="column">
+    <Grid
+      container
+      spacing={2}
+      display="flex"
+      flexDirection="column"
+      padding={'2rem'}
+    >
       <Grid
         container
         display="flex"
