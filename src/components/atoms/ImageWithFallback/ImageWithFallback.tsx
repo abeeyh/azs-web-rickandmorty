@@ -9,6 +9,7 @@ export interface ImageWithFallbackProps {
   isLoading?: boolean;
 }
 
+//TODO: criar testes
 const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
   src,
   alt,
@@ -25,6 +26,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     }
   };
 
+  // TODO: mover a estilizacao para o ImageWithFallback.scss
   return (
     <Box
       sx={{

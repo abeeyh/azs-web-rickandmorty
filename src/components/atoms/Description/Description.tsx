@@ -8,6 +8,7 @@ export interface CustomTypographyProps extends TypographyProps {
   description: string;
 }
 
+//TODO: criar testes e storybook
 const Description: React.FC<CustomTypographyProps> = ({
   isLoading,
   title,

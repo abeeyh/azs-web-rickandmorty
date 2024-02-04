@@ -16,6 +16,7 @@ interface CardDescriptionProps {
   onToggleWatched?: () => void;
 }
 
+// TODO: criar storybook e testes
 const CardDescription: React.FC<CardDescriptionProps> = ({
   isLoading,
   title,
@@ -25,6 +26,8 @@ const CardDescription: React.FC<CardDescriptionProps> = ({
   onToggleFavorite,
   onToggleWatched,
 }) => {
+  //TODO: mover a estilizacao para o CardDescription.scss
+
   return (
     <Grid
       container

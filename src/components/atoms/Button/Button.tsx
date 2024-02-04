@@ -12,6 +12,7 @@ export interface CustomButtonProps extends ButtonProps {
   children: React.ReactNode;
 }
 
+//TODO: criar testes
 const CustomButton: React.FC<CustomButtonProps> = ({
   variant,
   color,

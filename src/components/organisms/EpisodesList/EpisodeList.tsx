@@ -15,6 +15,7 @@ interface Episode {
   watched: boolean;
 }
 
+// TODO: criar storybook e testes
 const EpisodesList: React.FC = () => {
   // TODO: mover isto para um contexto e utilizar reducer
   const [episodes, setEpisodes] = useState<Episode[]>([]);
@@ -98,7 +99,7 @@ const EpisodesList: React.FC = () => {
     : episodes.filter((episode) =>
         episode.name.toLowerCase().includes(searchTitle.toLowerCase())
       );
-  // TODO: mover os componentes de input e show whatched para um componente
+  // TODO: mover os componentes de input e show whatched para um componente e a estilizacao para o EpisodeList.scss
   return (
     <Grid container spacing={2} display="flex" flexDirection="column">
       <Grid

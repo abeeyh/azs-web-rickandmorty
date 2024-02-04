@@ -14,6 +14,7 @@ interface CardProps {
   onToggleWatched?: () => void;
 }
 
+// TODO: criar storybook e testes
 const Card: React.FC<CardProps> = ({
   title,
   description,
