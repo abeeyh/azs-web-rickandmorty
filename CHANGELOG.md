@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/abeeyh/azs-web-rickandmorty/compare/v0.2.0...v0.3.0) (2024-02-04)
+
+
+### Features
+
+* add components ([6d7ca83](https://github.com/abeeyh/azs-web-rickandmorty/commit/6d7ca8342e35235a6d91f0948b6e5a4740d4bd86))
+* add fallback and card ([1d5b4cd](https://github.com/abeeyh/azs-web-rickandmorty/commit/1d5b4cd331f99289beeda68ab8ac0e22c11980bf))
+* add material ui ([0aca044](https://github.com/abeeyh/azs-web-rickandmorty/commit/0aca0446bb75b359fbb938c73f97c13512b9a152))
+* add storybook ([f7c6fab](https://github.com/abeeyh/azs-web-rickandmorty/commit/f7c6faba282b31f391bc7d826d390b7c638c3321))
+
 ## 0.2.0 (2024-02-01)
 
 ### Features
