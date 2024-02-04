@@ -16,7 +16,6 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
 }) => {
   const [imageSrc, setImageSrc] = useState(src);
   const [error, setError] = useState(false);
-  console.log(isLoading);
 
   const handleImageError = () => {
     if (src) {
@@ -30,7 +29,6 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
     <Box
       sx={{
         border: '1px solid black',
-        borderRadius: '1.25rem',
         position: 'relative',
         width: '100%',
         paddingTop: '75%',
