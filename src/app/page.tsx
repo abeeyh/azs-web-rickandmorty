@@ -22,7 +22,6 @@ const ClientSideComponent = () => {
       <Grid
         container
         justifyContent="center"
-        alignItems="center"
         style={{ minHeight: '100vh' }}
         marginTop={16}
       >

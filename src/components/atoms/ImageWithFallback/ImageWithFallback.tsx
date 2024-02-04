@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import ImageNotSupportedIcon from '@mui/icons-material/ImageNotSupported';
-import { Box, Skeleton } from '@mui/material';
+import { Box, Grid, Skeleton } from '@mui/material';
 
 export interface ImageWithFallbackProps {
   src: string;
@@ -32,6 +32,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         position: 'relative',
         width: '100%',
         paddingTop: '75%',
+        borderRadius: '1.5rem',
       }}
     >
       {isLoading && (
@@ -48,7 +49,11 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         />
       )}
       {error && (
-        <Box
+        <Grid
+          container
+          direction="column"
+          justifyContent="flex-start"
+          alignItems="flex-start"
           sx={{
             position: 'absolute',
             top: '8px',
@@ -56,13 +61,13 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
           }}
         >
           <ImageNotSupportedIcon fontSize="large" />
-        </Box>
+        </Grid>
       )}
       {!error && !isLoading && (
         <Image
           layout="fill"
           objectFit="cover"
-          src={imageSrc}
+          src={imageSrc || '/image-not-supported.png'}
           alt={alt}
           onError={handleImageError}
         />
