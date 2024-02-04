@@ -1,18 +1,23 @@
-import { createTheme } from '@mui/material';
-import { blueGrey, cyan, pink } from '@mui/material/colors';
+import { createTheme } from '@mui/material/styles';
+import { green, blueGrey, teal, common } from '@mui/material/colors';
 
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: pink['A200'],
+      main: green[400],
     },
     secondary: {
-      main: cyan['A400'],
+      main: teal[200],
     },
     background: {
-      default: blueGrey['800'],
-      paper: blueGrey['700'],
+      default: blueGrey[900],
+      paper: blueGrey[800],
+    },
+  },
+  typography: {
+    allVariants: {
+      color: common['white'],
     },
   },
 });

@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react';
 import CustomButton, { CustomButtonProps } from './Button';
+import { Typography } from '@mui/material';
 
 export default {
   title: 'Components/Atoms/Button',
@@ -13,14 +14,14 @@ const Template: Story<CustomButtonProps> = (args) => <CustomButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  text: 'Click me',
+  children: <Typography>Click me</Typography>,
   variant: 'contained',
   color: 'primary',
 };
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-  text: 'Disabled Button',
+  children: <Typography>Disabled Button</Typography>,
   variant: 'contained',
   color: 'primary',
   disabled: true,
@@ -28,21 +29,21 @@ Disabled.args = {
 
 export const Outlined = Template.bind({});
 Outlined.args = {
-  text: 'Outlined Button',
+  children: <Typography>Outlined Button</Typography>,
   variant: 'outlined',
   color: 'primary',
 };
 
 export const Text = Template.bind({});
 Text.args = {
-  text: 'Text Button',
+  children: <Typography>Text Button</Typography>,
   variant: 'text',
   color: 'primary',
 };
 
-export const onClickAlert = Template.bind({});
-onClickAlert.args = {
-  text: 'Alert Button',
+export const OnClickAlert = Template.bind({});
+OnClickAlert.args = {
+  children: <Typography>Alert Button</Typography>,
   variant: 'contained',
   color: 'primary',
   onClick: () => alert('Button clicked'),
