@@ -72,6 +72,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
           src={imageSrc || ''}
           alt={alt}
           onError={handleImageError}
+          style={{ borderRadius: '1.25rem' }}
         />
       )}
     </Box>

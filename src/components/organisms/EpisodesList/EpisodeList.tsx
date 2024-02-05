@@ -71,7 +71,10 @@ const EpisodesList: React.FC = () => {
             <Card
               title={episode.name}
               description={episode.air_date}
-              imageUrl={episode.imagem ?? ''}
+              imageUrl={
+                episode.imagem ??
+                'https://m.media-amazon.com/images/M/MV5BZjRjOTFkOTktZWUzMi00YzMyLThkMmYtMjEwNmQyNzliYTNmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_FMjpg_UX1000_.jpg'
+              }
               isLoading={isLoading}
               isFavorite={episode.favorite}
               isWatched={episode.watched}
