@@ -69,7 +69,7 @@ const ImageWithFallback: React.FC<ImageWithFallbackProps> = ({
         <Image
           layout="fill"
           objectFit="cover"
-          src={imageSrc || '/image-not-supported.png'}
+          src={imageSrc || ''}
           alt={alt}
           onError={handleImageError}
         />
