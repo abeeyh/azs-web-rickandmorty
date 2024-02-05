@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.0](https://github.com/abeeyh/azs-web-rickandmorty/compare/v0.3.0...v1.0.0) (2024-02-05)
+
+
+### Features
+
+* implement use context and reducer ([30a20cf](https://github.com/abeeyh/azs-web-rickandmorty/commit/30a20cfa6182873da1dcf34d80c14ea0f6cc60c4))
+
+
+### Bug Fixes
+
+* adjust on layout ([fd01485](https://github.com/abeeyh/azs-web-rickandmorty/commit/fd0148561a8da6514bef451d744d86db51578ace))
+
 ## [0.3.0](https://github.com/abeeyh/azs-web-rickandmorty/compare/v0.2.0...v0.3.0) (2024-02-04)
 
 ### Features
