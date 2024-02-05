@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { darkTheme } from '../provider/theme/dark.theme';
 import EpisodesList from '../components/organisms/EpisodesList/EpisodeList';
+import { EpisodesProvider } from '../context/EpisodesContext';
 import { Grid } from '@mui/material';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -19,14 +20,16 @@ const ClientSideComponent = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Grid
-        container
-        justifyContent="center"
-        style={{ minHeight: '100vh' }}
-        marginTop={8}
-      >
-        <EpisodesList />
-      </Grid>
+      <EpisodesProvider>
+        <Grid
+          container
+          justifyContent="center"
+          style={{ minHeight: '100vh' }}
+          marginTop={8}
+        >
+          <EpisodesList />
+        </Grid>
+      </EpisodesProvider>
     </ThemeProvider>
   );
 };

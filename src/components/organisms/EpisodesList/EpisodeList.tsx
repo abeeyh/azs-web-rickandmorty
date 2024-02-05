@@ -1,97 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Card from '../../molecules/Card/Card';
 import { Grid, Button, TextField } from '@mui/material';
+import { useEpisodes } from '../../../context/EpisodesContext';
 
-interface Episode {
-  id: number;
-  name: string;
-  air_date: string;
-  characters: {
-    id: number;
-    name: string;
-  }[];
-  imagem?: string;
-  favorite: boolean;
-  watched: boolean;
-}
-
-// TODO: criar storybook e testes
 const EpisodesList: React.FC = () => {
-  // TODO: mover isto para um contexto e utilizar reducer
-  const [episodes, setEpisodes] = useState<Episode[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [showFavorites, setShowFavorites] = useState(false);
-  const [searchTitle, setSearchTitle] = useState('');
-
-  useEffect(() => {
-    // TODO: adicionar apollo para fazer a consulta
-    const fetchEpisodes = async () => {
-      try {
-        const response = await fetch('https://rickandmortyapi.com/graphql', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            query: `query {
-                    episodes {
-                      results {
-                        id
-                        name
-                        air_date
-                          characters {
-                            id
-                            name
-                          }
-                        }
-                      }
-                    }
-            `,
-          }),
-        });
-
-        const { data } = await response.json();
-        const episodesWithFavorite = data.episodes.results.map(
-          (episode: Episode) => ({
-            ...episode,
-            favorite: false,
-            watched: false,
-          })
-        );
-        setEpisodes(episodesWithFavorite);
-        setIsLoading(false);
-      } catch (error) {
-        console.error('Error fetching episodes:', error);
-      }
-    };
-
-    fetchEpisodes();
-  }, []);
+  const {
+    state: { episodes, isLoading, showFavorites, searchTitle },
+    dispatch,
+  } = useEpisodes();
 
   const toggleFavorite = (id: number) => {
-    setEpisodes((prevEpisodes) =>
-      prevEpisodes.map((episode) =>
-        episode.id === id
-          ? { ...episode, favorite: !episode.favorite }
-          : episode
-      )
-    );
+    dispatch({ type: 'TOGGLE_FAVORITE', payload: id });
   };
 
   const toggleWatched = (id: number) => {
-    setEpisodes((prevEpisodes) =>
-      prevEpisodes.map((episode) =>
-        episode.id === id ? { ...episode, watched: !episode.watched } : episode
-      )
-    );
+    dispatch({ type: 'TOGGLE_WATCHED', payload: id });
   };
 
   const handleToggleFavorites = () => {
-    setShowFavorites(!showFavorites);
+    dispatch({ type: 'SET_SHOW_FAVORITES', payload: !showFavorites });
   };
 
   const handleSearchTitle = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTitle(event.target.value);
+    dispatch({ type: 'SET_SEARCH_TITLE', payload: event.target.value });
   };
 
   const filteredEpisodes = showFavorites
@@ -135,8 +66,8 @@ const EpisodesList: React.FC = () => {
         </Grid>
       </Grid>
       <Grid container spacing={2}>
-        {filteredEpisodes.map((episode: Episode) => (
-          <Grid item xs={12} sm={12} md={12} lg={12} key={episode.id}>
+        {filteredEpisodes.map((episode) => (
+          <Grid item xs={6} sm={6} md={6} lg={6} key={episode.id}>
             <Card
               title={episode.name}
               description={episode.air_date}
